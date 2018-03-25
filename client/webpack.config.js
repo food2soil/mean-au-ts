@@ -102,7 +102,8 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
-      Popper: ['popper.js', 'default']
+      Popper: ['popper.js', 'default'],
+      L: 'leaflet'
     }),
     new ModuleDependenciesPlugin({
       'aurelia-testing': [ './compile-spy', './view-spy' ]

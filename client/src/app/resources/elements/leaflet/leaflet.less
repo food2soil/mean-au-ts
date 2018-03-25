@@ -1,0 +1,32 @@
+@import '../../../less/variables.less';
+
+.host-icon {
+  background:var(--primary);
+  border:5px solid rgba(255,255,255,0.5);
+  color:var(--white);
+  font-weight:bold;
+  text-align:center;
+
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.fa-leaflet-icon {
+  position: relative;
+  left: -15px;
+  top : -15px;  
+}
+
+.host-icon::before {
+  content:  '';
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  background: lightgreen;
+  border-top-left-radius: 60%;
+  border-top-right-radius: 50% 80%;
+  border-bottom-left-radius: 90% 50%;
+  border-bottom-right-radius: 0%;
+}

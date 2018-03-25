@@ -3,6 +3,9 @@
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'toastr/build/toastr.css';
+import 'leaflet/dist/leaflet.css';
+import '../scripts/awesome-markers/leaflet.awesome-markers.css';
+import '../scripts/awesome-markers/leaflet.awesome-markers.js';
 
 import {Aurelia} from 'aurelia-framework'
 import environment from './environment';
