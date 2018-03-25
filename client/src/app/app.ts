@@ -17,7 +17,7 @@ export class App {
 
   signOut() {
     this.authApi.signout().then(response => {
-      this.auth.clearAuth();
+      this.auth.signOut();
       this.router.navigateToRoute('home');
     })
   }

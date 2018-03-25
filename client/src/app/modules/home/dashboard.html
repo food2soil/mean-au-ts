@@ -1,6 +1,19 @@
 <template>
   <require from="./dashboard.less"></require>
 
+  <div class="welcome-overlay" if.bind="!welcomeDismissed">
+    <h1>Welcome to the Food2Soil Compost Tracker!</h1>
+    <p>
+      Food2Soil is a cooperative of a growing group of businesses and gardeners in San Diego who want to direct their waste so it creates jobs and resources for the community.
+    </p>
+    <p>
+      We hire local composters to pick up pre-consumer food waste from participating restaurants and compost them at neighborhood community gardens and urban farms. The soil produced helps local gardeners to grow food.
+    </p>
+    <p class="welcome-cta">
+      Explore our community and see what Food2Soil can offer for you!
+    </p>
+    <button class="btn btn-primary" click.delegate="dismissWelcome()">Explore</button>
+  </div>
   <div class="dashboard">
     <leaflet></leaflet>
   </div>

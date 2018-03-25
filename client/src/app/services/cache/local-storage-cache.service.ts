@@ -11,7 +11,7 @@ export class LocalStorageCache implements ICache {
   private buildCacheKeyRoot(mode: ICache.Mode) {
     if (mode === ICache.Mode.Global) return `${mode}`;
 
-    return `${mode}+${this.router.currentInstruction.config.route}`
+    return `${mode}+${this.router.currentInstruction.config.name}`
   }
 
   private buildCacheKey(mode: ICache.Mode, key: string) {
