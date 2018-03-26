@@ -25,10 +25,6 @@ export class HomeDashboard {
     this.isDrawerOpen = true;
   }
 
-  hideDrawer() {
-    this.isDrawerOpen = false;
-  }
-
   bind() {
     this.isWelcomeDismissed = this.cache.get(ICache.Mode.Local, this.welcomeDismissedKey);
   }

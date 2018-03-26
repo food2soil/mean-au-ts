@@ -19,51 +19,6 @@
   }
 }
 
-.info-drawer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: @primary-bg;
-
-  padding-top: @container-padding;
-  padding-bottom: @container-padding;
-  padding-left: @side-nav-width;
-
-  min-height: 100vh;
-  z-index: @nav-z - 100;
-  box-shadow: 1px 0px 18px 0px @shadow-color;
-
-  width: 0;
-  transition: width 0.15s ease-in;
-
-  overflow-x: hidden;
-
-  // for testing
-  text-align: right;
-  
-  &.info-drawer-open {
-    width: 60%;
-  }
-}
-
-.info-drawer-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
-  width: 100%;
-
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease-in;
-  background-color: black;
-
-  &.info-drawer-overlay-open {
-    z-index: @nav-z - 101;
-    opacity: 0.7;
-  }
-}
-
 .dashboard {
   .leaflet-container {
     height: 100vh;

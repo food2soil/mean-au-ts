@@ -1,0 +1,15 @@
+<template>
+  <require from="./info-drawer.less"></require>
+  
+  <div class="info-drawer" class.bind="isOpen ? 'info-drawer-open' : ''">
+    <div class="container">
+      <a click.delegate="hideDrawer()">
+        <i class="fa fa-arrow-left fa-2x text-secondary"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="info-drawer-overlay" class.bind="isOpen ? 'info-drawer-overlay-open' : ''"
+       click.delegate="hideDrawer()">
+  </div>
+</template>

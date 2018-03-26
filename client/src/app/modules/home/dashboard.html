@@ -14,15 +14,7 @@
     </p>
     <button class="btn btn-primary" click.delegate="dismissWelcome()">Explore</button>
   </div>
-  <div class="info-drawer" class.bind="isDrawerOpen ? 'info-drawer-open' : ''">
-    <div class="container" show.bind="isDrawerOpen">
-      <a click.delegate="hideDrawer()">
-        <i class="fa fa-arrow-left fa-2x text-secondary"></i>
-      </a>
-    </div>
-  </div>
-  <div class="info-drawer-overlay" class.bind="isDrawerOpen ? 'info-drawer-overlay-open' : ''"
-       click.delegate="hideDrawer()"></div>
+  <info-drawer is-open.two-way="isDrawerOpen"></info-drawer>
   <div class="dashboard">
     <leaflet on-marker-click.call="showDrawer()"></leaflet>
   </div>
