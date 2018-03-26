@@ -11,5 +11,6 @@ export const globalResources = [
   PLATFORM.moduleName('app/resources/elements/side-nav/side-nav'),
   PLATFORM.moduleName('app/resources/elements/side-nav/side-nav-item/side-nav-item'),
   PLATFORM.moduleName('app/resources/elements/side-nav/side-nav-sub-item/side-nav-sub-item'),
+  PLATFORM.moduleName('app/resources/elements/welcome-overlay/welcome-overlay'),
   PLATFORM.moduleName('aurelia-mask/dist/masked-input')
 ];
