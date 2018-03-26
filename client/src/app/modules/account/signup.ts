@@ -20,14 +20,11 @@ export class SignUp {
 
   signUp() {
     // TODO: add validation
+    this.auth.signOut();
     this.authApi.signup(this.signUpBody).then(response => {
       this.router.navigateToRoute('home');
       // TODO: Toast and redirect to home
     })
-  }
-
-  activate() {
-    this.auth.signOut();
   }
 
   detached() {
