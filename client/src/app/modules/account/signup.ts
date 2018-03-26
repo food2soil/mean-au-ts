@@ -4,6 +4,7 @@ import { FormGroup } from "app/resources/elements/form-group/form-group";
 import { Router } from "aurelia-router";
 import { FormWrap } from "app/resources/elements/form-wrap/form-wrap";
 import { AuthDto } from "mean-au-ts-shared";
+import { IAuth } from "../../services/auth/auth.service";
 
 @autoinject
 export class SignUp {
@@ -13,7 +14,8 @@ export class SignUp {
 
   constructor(
     private authApi: AuthApi,
-    private router: Router
+    private router: Router,
+    private auth: IAuth
   ) { }
 
   signUp() {
@@ -22,6 +24,10 @@ export class SignUp {
       this.router.navigateToRoute('home');
       // TODO: Toast and redirect to home
     })
+  }
+
+  activate() {
+    this.auth.signOut();
   }
 
   detached() {

@@ -1,9 +1,12 @@
 import {Utilities} from 'mean-au-ts-shared'
 import * as L from 'leaflet';
-import { customElement } from 'aurelia-framework';
+import { customElement, bindable, TaskQueue, autoinject } from 'aurelia-framework';
 
 @customElement('leaflet')
+@autoinject
 export class Leaflet {
+  @bindable onMarkerClick: () => void
+
   id: string = Utilities.newGuid()
   map: L.Map;
   center:[number, number] = [32.747041, -117.140229]
@@ -32,6 +35,10 @@ export class Leaflet {
     markerColor: 'red'
   });
 
+  constructor(
+    private taskQueue: TaskQueue
+  ) { }
+
   attached() {
     this.map = L.map(this.id).setView(this.center, 11);
     L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
@@ -52,17 +59,17 @@ export class Leaflet {
         case 1:
         case 2:
         case 3:
-          L.marker(loc, {icon: this.residentialMarker}).addTo(this.map);
+          L.marker(loc, {icon: this.residentialMarker}).addTo(this.map).on('click', this.onMarkerClick);
           break;
         case 4:
         case 5:
-          L.marker(loc, {icon: this.restaurantMarker}).addTo(this.map);
+          L.marker(loc, {icon: this.restaurantMarker}).addTo(this.map).on('click', this.onMarkerClick);
           break;
         case 6:
-          L.marker(loc, {icon: this.hubMarker}).addTo(this.map);
+          L.marker(loc, {icon: this.hubMarker}).addTo(this.map).on('click', this.onMarkerClick);
           break;
         case 7:
-          L.marker(loc, {icon: this.collectionMarker}).addTo(this.map);
+          L.marker(loc, {icon: this.collectionMarker}).addTo(this.map).on('click', this.onMarkerClick);
           break;
       }
     }

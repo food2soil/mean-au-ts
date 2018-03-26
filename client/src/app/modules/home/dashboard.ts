@@ -8,19 +8,28 @@ export class HomeDashboard {
 
   private welcomeDismissedKey: string = 'WELCOME_DISMISSED';
   
-  welcomeDismissed: boolean;
+  isWelcomeDismissed: boolean;
+  isDrawerOpen: boolean;
 
   constructor(
     public auth: IAuth,
     public cache: ICache
   ) { }
 
-  bind() {
-    this.welcomeDismissed = this.cache.get(ICache.Mode.Local, this.welcomeDismissedKey);
-  }
-
   dismissWelcome() {
     this.cache.set(ICache.Mode.Local, this.welcomeDismissedKey, true);
-    this.welcomeDismissed = true;
+    this.isWelcomeDismissed = true;
+  }
+
+  showDrawer() {
+    this.isDrawerOpen = true;
+  }
+
+  hideDrawer() {
+    this.isDrawerOpen = false;
+  }
+
+  bind() {
+    this.isWelcomeDismissed = this.cache.get(ICache.Mode.Local, this.welcomeDismissedKey);
   }
 }

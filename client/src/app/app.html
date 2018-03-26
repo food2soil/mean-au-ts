@@ -3,9 +3,6 @@
   <side-nav>
     <div slot="nav-items">
       <side-nav-item title="Home" icon="fa-home" href="/">
-        <div slot="nav-sub-items">
-          <side-nav-sub-item title="Test 1" href="/test"></side-nav-sub-item>
-        </div>
       </side-nav-item>
       <side-nav-item title.bind="auth.isAuthenticated ? 'Profile' : 'Sign Up'" icon="fa-user" 
                      href.bind="auth.isAuthenticated ? '/account' : '/account/signup'">

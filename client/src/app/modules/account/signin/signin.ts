@@ -46,6 +46,10 @@ export class SignInMain implements RoutableComponentCanActivate, ComponentDetach
     }
   }
 
+  activate() {
+    this.auth.signOut();
+  }
+
   detached() {
     this.form.clear();
   }

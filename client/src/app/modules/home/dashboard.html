@@ -1,7 +1,7 @@
 <template>
   <require from="./dashboard.less"></require>
 
-  <div class="welcome-overlay" if.bind="!welcomeDismissed">
+  <div class="welcome-overlay" if.bind="!isWelcomeDismissed">
     <h1>Welcome to the Food2Soil Compost Tracker!</h1>
     <p>
       Food2Soil is a cooperative of a growing group of businesses and gardeners in San Diego who want to direct their waste so it creates jobs and resources for the community.
@@ -14,7 +14,16 @@
     </p>
     <button class="btn btn-primary" click.delegate="dismissWelcome()">Explore</button>
   </div>
+  <div class="info-drawer" class.bind="isDrawerOpen ? 'info-drawer-open' : ''">
+    <div class="container" show.bind="isDrawerOpen">
+      <a click.delegate="hideDrawer()">
+        <i class="fa fa-arrow-left fa-2x text-secondary"></i>
+      </a>
+    </div>
+  </div>
+  <div class="info-drawer-overlay" class.bind="isDrawerOpen ? 'info-drawer-overlay-open' : ''"
+       click.delegate="hideDrawer()"></div>
   <div class="dashboard">
-    <leaflet></leaflet>
+    <leaflet on-marker-click.call="showDrawer()"></leaflet>
   </div>
 </template>
