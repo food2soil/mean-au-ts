@@ -1,6 +1,25 @@
 @import './less/variables.less';
 @import './resources/elements/side-nav/side-nav.less';
 
+// ifttt-styles start
+.btn {
+  border-radius: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.form-control {
+  border-color: #e6e6e6;
+  box-shadow: 0 0 0 0.2rem #e6e6e6;
+}
+
+.form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem var(--primary);
+}
+
+// ifttt-styles end
+
 a:hover {
   cursor: pointer
 }
@@ -29,6 +48,6 @@ a:hover {
   }
 
   .container-low {
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
 }
