@@ -2,14 +2,67 @@
   <require from="./info-drawer.less"></require>
   
   <div class="info-drawer" class.bind="isOpen ? 'info-drawer-open' : ''">
-    <div class="container">
-      <a click.delegate="hideDrawer()">
-        <i class="fa fa-arrow-left fa-2x text-secondary"></i>
-      </a>
+    <div class="d-flex flex-column info-drawer-container">
+
+      <div class="info-drawer-header">
+        <h2 class="d-flex flex-row">
+          <span class="fa-stack fa-lg marker-icon">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-cutlery fa-inverse fa-stack-1x"></i>
+          </span>
+          <div class="pl-3 text-white align-self-center">
+            Bob's Restaurant
+            <br>
+            <small class="text-muted">
+              123 Main St
+            </small>
+          </div>
+        </h2>
+      </div>
+
+      <div class="info-drawer-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  test
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  test
+                </div>
+              </div>
+            </div>  
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  test
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  test
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="info-drawer-overlay" class.bind="isOpen ? 'info-drawer-overlay-open' : ''"
        click.delegate="hideDrawer()">
+  </div>
+  <div class="info-drawer-closer" class.bind="isOpen ? 'info-drawer-closer-open' : ''">
+    <a click.delegate="hideDrawer()">
+      <i class="fa fa-arrow-circle-o-left fa-2x"></i>
+    </a>
   </div>
 </template>
